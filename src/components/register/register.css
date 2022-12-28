@@ -5,7 +5,9 @@
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
-.sign-up-container {
+
+
+.sign-up-container{
   position: absolute;
   width: 505px;
   height: 757px;
@@ -19,6 +21,47 @@
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 1000px) {
+  .sign-up-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 400px;
+  }
+  .register-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+  }
+  .image-div{
+    display: none;
+  }
+}
+
+.login-container{
+  width: 505px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 14px 47px 25px 35px;
+
+  background: #ffffff;
+  border: 0.5px solid #878787;
+  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+#login-div{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+  
+}
+
 .welcome-text {
   font-weight: 300;
   font-size: 25px;
@@ -30,8 +73,9 @@
   line-height: 24px;
   color: #7d7d7d;
 }
-.bottom-text > span {
+.bottom-text > span,#forgot-text {
   color: black;
+  cursor: pointer;
 }
 
 .sign-up-text {
@@ -70,6 +114,7 @@ input {
   line-height: 24px;
   background: #000000;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .image-div {
@@ -78,4 +123,19 @@ input {
   height: 650px;
   left: 598px;
   top: 127px;
+}
+.checkbox-div{
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-text{
+  display: flex;
+  width: 60%;
+  gap: 4px;
+}
+#check{
+  width: 20px;
+  height: 20px;
 }
