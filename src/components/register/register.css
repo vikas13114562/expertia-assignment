@@ -10,7 +10,7 @@
 .sign-up-container{
   position: absolute;
   width: 505px;
-  height: 757px;
+  height: auto;
   left: 111px;
   top: 89px;
   padding: 14px 47px 25px 35px;
@@ -138,4 +138,8 @@ input {
 #check{
   width: 20px;
   height: 20px;
+}
+.error{
+  color: red;
+  font-size: 14px;
 }
