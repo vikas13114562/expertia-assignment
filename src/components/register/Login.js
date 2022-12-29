@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { UserContext } from "../data/user-context";
 import "./register.css";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,13 @@ export default function Login() {
             password:"",
         }
     )
+    const [userNameErr, setUserNameErr] = useState("")
+    const [passwordErr, setPasswordErr] = useState("")
+    
+    useEffect(() =>{
+        setUserNameErr("")
+        setPasswordErr("")
+    },[loginData])
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -29,7 +36,11 @@ export default function Login() {
     function handleLogin() {
         const {userName, password} = loginData;
         if(!userName || !password) {
-            alert("Please fill all fields")
+          !userName && setUserNameErr("User name can't be Empty")
+          !password && setPasswordErr("Password can't be Empty")
+           // alert("Please fill all fields")
+          return;
+           
         }
         else if(userName && password) {
             let flag = false;
@@ -47,6 +58,7 @@ export default function Login() {
                 setFname(loginData.userName)
                 setDate(new Date(ele.date))
                 navigate('/dashboard')
+                return;
                 
                 }
             });
@@ -80,6 +92,7 @@ export default function Login() {
           value={loginData.userName}
           
         />
+        <span className="error">{userNameErr}</span>
         <label htmlFor="userName">Password</label>
         <input
           type="password"
@@ -90,6 +103,7 @@ export default function Login() {
           name="password"
           value={loginData.password}
         />
+        <span className="error">{passwordErr}</span>
         <div className="checkbox-div">
             <div className="checkbox-text">
             <input 
